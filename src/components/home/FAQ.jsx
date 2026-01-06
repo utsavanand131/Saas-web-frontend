@@ -1,72 +1,34 @@
-<<<<<<< HEAD
-import { motion } from "framer-motion";
 
-const faqs = [
-  {
-    question: "Is this frontend only?",
-    answer: "Yes, this project is purely frontend with no backend integration.",
-  },
-  {
-    question: "Can I customize it?",
-    answer: "Absolutely. The components are reusable and easy to extend.",
-  },
-  {
-    question: "Is it production ready?",
-    answer: "Yes, the UI structure follows modern SaaS best practices.",
-=======
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "What is this SaaS UI template?",
+    question: "What is SaaSify?",
     answer:
-      "This is a modern, frontend-only SaaS UI template built with React, Tailwind CSS, React Router, and Framer Motion. It helps you quickly build professional SaaS landing pages.",
+      "SaaSify is a modern frontend SaaS UI template built with React, Tailwind CSS, React Router, and Framer Motion to help you launch faster.",
   },
   {
-    question: "Is this template suitable for production use?",
+    question: "Is this template production ready?",
     answer:
-      "Yes. It follows clean architecture, reusable components, and responsive design principles, making it production-ready.",
+      "Yes. It follows scalable architecture, reusable components, and responsive design best practices.",
   },
   {
-    question: "Does this include backend or API integration?",
+    question: "Does SaaSify include a backend?",
     answer:
-      "No. This is a frontend-only project. You can integrate any backend or API you prefer.",
+      "No. SaaSify is frontend-only. You can connect any backend or API of your choice.",
   },
   {
-    question: "Can I customize the design and components?",
+    question: "Can I customize the UI?",
     answer:
-      "Yes. Tailwind CSS allows easy customization of colors, spacing, typography, and layouts.",
+      "Absolutely. Tailwind CSS makes it easy to customize colors, spacing, typography, and layouts.",
   },
   {
-    question: "Does it support mobile devices?",
+    question: "Is it mobile friendly?",
     answer:
-      "Yes. The entire UI is responsive and optimized for mobile, tablet, and desktop devices.",
->>>>>>> 61b0a70 (Add FAQ accordion)
+      "Yes. SaaSify is fully responsive and optimized for mobile, tablet, and desktop devices.",
   },
-];
-
-export default function FAQ() {
-<<<<<<< HEAD
-  return (
-    <div className="max-w-3xl mx-auto space-y-6">
-      {faqs.map((faq, i) => (
-        <motion.div
-          key={faq.question}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: i * 0.1 }}
-          viewport={{ once: true }}
-          className="bg-white rounded-xl shadow-md p-6 border border-slate-200"
-        >
-          <h4 className="font-semibold text-slate-900">
-            {faq.question}
-          </h4>
-          <p className="mt-2 text-slate-600">
-            {faq.answer}
-          </p>
-        </motion.div>
-=======
+];export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
@@ -86,7 +48,7 @@ export default function FAQ() {
               {faq.question}
             </span>
             <ChevronDown
-              className={`w-5 h-5 transition ${
+              className={`w-5 h-5 transition-transform ${
                 openIndex === index ? "rotate-180" : ""
               }`}
             />
@@ -96,14 +58,7 @@ export default function FAQ() {
             <div className="px-6 pb-6 text-slate-600">
               {faq.answer}
             </div>
-          )}
-        </div>
->>>>>>> 61b0a70 (Add FAQ accordion)
+          )}        </div>
       ))}
     </div>
-  );
-}
-<<<<<<< HEAD
-
-=======
->>>>>>> 61b0a70 (Add FAQ accordion)
+  );}

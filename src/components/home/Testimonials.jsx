@@ -1,58 +1,56 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Trisha",
-    role: "Founder, StartupX",
-    points: [
-      "Clean and modern UI",
-      "Easy to customize",
-      "Great performance",
-      "Perfect SaaS structure",
-    ],
+    name: "Trisha Mehta",
+    role: "Product Manager",
+    image: "/avatars/trisha.jpg",
+    quote:
+      "This SaaS UI saved us weeks of development time. Clean, modern, and incredibly easy to customize.",
   },
   {
-    name: "Udit roy",
-    role: "Product Manager",
-    points: [
-      "Well-organized codebase",
-      "Reusable components",
-      "Smooth animations",
-      "Production ready",
-    ],
+    name: "Udit Roy",
+    role: "Startup Founder",
+    image: "/avatars/udit.jpg",
+    quote:
+      "The component structure and animations are top-notch. It looks premium out of the box.",
+  },
+  {
+    name: "Ananya Sharma",
+    role: "UX Designer",
+    image: "/avatars/ananya.jpg",
+    quote:
+      "A beautifully designed UI that balances aesthetics and usability perfectly.",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="py-24">
-      <div className="max-w-6xl mx-auto px-6 grid gap-8 md:grid-cols-2">
-        {testimonials.map((item, i) => (
-          <motion.div
-            key={item.name}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-xl p-8 shadow-md border border-slate-200"
-          >
-            <h4 className="text-lg font-semibold text-slate-900">
-              {item.name}
-            </h4>
-            <p className="text-sm text-slate-600 mb-4">{item.role}</p>
+    <div className="grid gap-6 md:grid-cols-3">
+      {testimonials.map((t, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.1 }}
+          viewport={{ once: true }}
+          className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm"
+        >
+          <p className="text-slate-600 mb-4">“{t.quote}”</p>
 
-            <ul className="space-y-3">
-              {item.points.map((point) => (
-                <li key={point} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-emerald-600 mt-0.5" />
-                  <span className="text-slate-700">{point}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+          <div className="flex items-center gap-3 mt-6">
+            <img
+              src={t.image}
+              alt={t.name}
+              className="w-10 h-10 rounded-full object-cover"
+            />
+            <div>
+              <p className="font-semibold text-slate-900">{t.name}</p>
+              <p className="text-sm text-slate-500">{t.role}</p>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
   );
 }

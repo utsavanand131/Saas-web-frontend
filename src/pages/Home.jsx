@@ -4,11 +4,14 @@ import PricingCards from "../components/home/PricingCards";
 import Testimonials from "../components/home/Testimonials";
 import FAQ from "../components/home/FAQ";
 import Section from "../components/ui/Section";
+import UsedByTeams from "../components/home/UsedByTeams";
+
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <UsedByTeams />
 
       <Section
         title="Features"
